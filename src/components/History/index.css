@@ -1,0 +1,50 @@
+.history-list-item {
+  display: flex;
+}
+
+.sub-list-item-1 {
+  margin-right: 20px;
+}
+
+.time {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.sub-flex-con {
+  display: flex;
+}
+
+.sub-list-item-2 {
+  flex-grow: 1;
+}
+
+.logo-img {
+  width: 20px;
+  height: 20px;
+}
+
+.title {
+  color: #475569;
+}
+
+.domain {
+  color: #f8fafc;
+  font-weight: 300;
+}
+
+.btn {
+  border: 0;
+  background-color: #ffffff;
+}
+.delete-img {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .history-list-item {
+    display: flex;
+    flex-direction: column;
+  }
+}
