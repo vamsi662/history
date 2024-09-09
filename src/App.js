@@ -1,8 +1,7 @@
 import './App.css'
 
-import History from './components/History'
-
 import {Component} from 'react'
+import History from './components/History'
 
 // These are the list used in the application. You can move them to any component needed.
 const initialHistoryList = [
@@ -83,9 +82,11 @@ const initialHistoryList = [
 // Replace your code here
 class App extends Component {
   state = {search: '', historyList: initialHistoryList}
+
   searchHistory = event => {
     this.setState({search: event.target.value})
   }
+
   onDelete = id => {
     const {historyList} = this.state
     const filteredHistory = historyList.filter(
@@ -93,11 +94,16 @@ class App extends Component {
     )
     this.setState({historyList: filteredHistory})
   }
+
   render() {
     const {search, historyList} = this.state
-    const filterHistoryList = historyList.map(eachHistoryItem =>
-      eachHistoryItem.title.toLowerCase().includes(search),
+    const filterHistoryList = historyList.filter(eachHistoryItem =>
+      eachHistoryItem.title.toLowerCase().includes(search.toLowerCase()),
     )
+    let noHistoryList = false
+    if (filterHistoryList.length === 0) {
+      noHistoryList = true
+    }
     return (
       <div className="main-con">
         <div className="header">
@@ -109,6 +115,7 @@ class App extends Component {
               <img
                 className="search-image"
                 src="https://assets.ccbp.in/frontend/react-js/search-img.png"
+                alt="search"
               />
             </div>
             <div className="input-con">
@@ -122,15 +129,19 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <ul className="history-list">
-          {filterHistoryList.map(eachHistoryItem => (
-            <History
-              eachHistoryItem={eachHistoryItem}
-              key={eachHistoryItem.id}
-              onDelete={this.onDelete}
-            />
-          ))}
-        </ul>
+        {noHistoryList ? (
+          <p className="empty-history">There is no history to show</p>
+        ) : (
+          <ul className="history-list">
+            {filterHistoryList.map(eachHistoryItem => (
+              <History
+                eachHistoryItem={eachHistoryItem}
+                key={eachHistoryItem.id}
+                onDelete={this.onDelete}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     )
   }

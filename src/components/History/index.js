@@ -32,6 +32,7 @@ const History = props => {
             <img
               className="delete-img"
               src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
+              alt="delete"
             />
           </button>
         </div>

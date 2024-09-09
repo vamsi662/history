@@ -14,6 +14,7 @@ body {
 .empty-history {
   color: #64748b;
   font-size: 20px;
+  text-align: center;
 }
 
 .main-con {
@@ -44,9 +45,9 @@ body {
   padding: 10px;
 }
 
-.search-image {
+/* .search-image {
   width: 20px;
-}
+} */
 
 .input-con {
   display: flex;
@@ -60,7 +61,7 @@ body {
   background-color: #2850a7;
   margin-left: 10px;
   height: 40px;
-  width:250px;
+  width: 250px;
 }
 
 .history-list {
