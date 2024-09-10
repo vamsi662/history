@@ -11,18 +11,21 @@ const History = props => {
 
   return (
     <li className="history-list-item">
-      <div className="sub-list-item-1">
+      <div className="list-sub-item-1">
         <p className="time">{timeAccessed}</p>
       </div>
-      <div className="sub-flex-con">
-        <div className="sub-list-item-2">
-          <div>
-            <img className="logo-img" src={logoUrl} alt="domain logo" />
-          </div>
+      <div className="list-sub-item-2">
+        <div className="sub-flex-con">
+          <img
+            className="logo-img"
+            src={logoUrl}
+            alt="domain logo"
+            className="image"
+          />
           <p className="title">{title}</p>
           <p className="domain">{domainUrl}</p>
         </div>
-        <div>
+        <div className="list-sub-item-3">
           <button
             type="button"
             className="btn"
@@ -33,6 +36,7 @@ const History = props => {
               className="delete-img"
               src="https://assets.ccbp.in/frontend/react-js/delete-img.png"
               alt="delete"
+              className="image"
             />
           </button>
         </div>

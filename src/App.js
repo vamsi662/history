@@ -1,6 +1,7 @@
 import './App.css'
 
 import {Component} from 'react'
+
 import History from './components/History'
 
 // These are the list used in the application. You can move them to any component needed.
@@ -100,17 +101,15 @@ class App extends Component {
     const filterHistoryList = historyList.filter(eachHistoryItem =>
       eachHistoryItem.title.toLowerCase().includes(search.toLowerCase()),
     )
-    let noHistoryList = false
-    if (filterHistoryList.length === 0) {
-      noHistoryList = true
-    }
+    let noHistoryList = filterHistoryList.length === 0
     return (
       <div className="main-con">
         <div className="header">
-          <div className="history-image-con">
-            <img src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png" />
-          </div>
-          <div className="search-con">
+          <img
+            className="history-image"
+            src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png"
+          />
+          <div className="search-input-con">
             <div className="search-image-con">
               <img
                 className="search-image"

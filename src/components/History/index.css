@@ -1,8 +1,10 @@
 .history-list-item {
   display: flex;
+  width: 100%;
+  margin: 8px 0;
 }
 
-.sub-list-item-1 {
+.list-sub-item-1 {
   margin-right: 20px;
 }
 
@@ -11,12 +13,31 @@
   font-weight: 700;
 }
 
-.sub-flex-con {
+.list-sub-item-2 {
   display: flex;
+  margin-left: 20px;
+  flex-grow: 1;
 }
 
-.sub-list-item-2 {
+.sub-flex-con {
+  display: flex;
   flex-grow: 1;
+}
+
+.image {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.title {
+  margin-left: 10px;
+  color: #475569;
+}
+
+.domain {
+  color: #64748b;
+  font-weight: 300;
+  margin-left: 10px;
 }
 
 .logo-img {
@@ -24,18 +45,11 @@
   height: 20px;
 }
 
-.title {
-  color: #475569;
-}
-
-.domain {
-  color: #f8fafc;
-  font-weight: 300;
-}
-
 .btn {
   border: 0;
   background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
 }
 .delete-img {
   width: 20px;
